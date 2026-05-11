@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Typography ===== */
+:root {
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Lora', serif;
+  --color-dark: #8B3A3A;
+  --color-gold: #E8C547;
+  --color-cream: #F5F1DE;
+  --color-white: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-gray-800 font-body;
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display;
+  font-family: var(--font-display);
+  color: var(--color-dark);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  @apply text-4xl md:text-5xl lg:text-6xl;
+  line-height: 1.1;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl;
+  line-height: 1.2;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl;
+}
+
+h4 {
+  @apply text-xl md:text-2xl;
+}
+
+p {
+  @apply text-base md:text-lg leading-relaxed;
+  line-height: 1.7;
+}
+
+/* ===== Links ===== */
+a {
+  @apply transition-colors duration-300;
+}
+
+a:hover {
+  @apply text-amp-gold;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  @apply px-8 py-3 md:px-10 md:py-4 bg-amp-dark text-white font-display font-bold rounded-none uppercase tracking-wider transition-all duration-300 hover:bg-amp-gold hover:text-amp-dark inline-block;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  @apply shadow-lg transform -translate-y-1;
+}
+
+.btn-secondary {
+  @apply px-8 py-3 md:px-10 md:py-4 border-2 border-amp-dark text-amp-dark font-display font-bold rounded-none uppercase tracking-wider transition-all duration-300 hover:bg-amp-dark hover:text-white;
+  letter-spacing: 1px;
+}
+
+.btn-secondary:hover {
+  @apply shadow-lg;
+}
+
+.btn-gold {
+  @apply px-6 py-2 bg-amp-gold text-amp-dark font-bold rounded-none inline-flex items-center gap-2 transition-all duration-300 hover:shadow-lg;
+}
+
+/* ===== Cards ===== */
+.card {
+  @apply bg-white p-6 md:p-8 rounded-none border border-gray-200 transition-all duration-300;
+}
+
+.card:hover {
+  @apply shadow-lg border-amp-gold;
+}
+
+.card-premium {
+  @apply bg-white p-8 rounded-none border-t-4 border-t-amp-gold shadow-none transition-all duration-300;
+}
+
+.card-premium:hover {
+  @apply shadow-2xl;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(232, 197, 71, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(232, 197, 71, 0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s infinite;
+}
+
+/* ===== Utility Classes ===== */
+.text-gold {
+  @apply text-amp-gold;
+}
+
+.text-dark {
+  @apply text-amp-dark;
+}
+
+.border-gold {
+  @apply border-amp-gold;
+}
+
+.bg-dark {
+  @apply bg-amp-dark;
+}
+
+.bg-cream {
+  @apply bg-amp-cream;
+}
+
+/* ===== Responsive Utilities ===== */
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 md:px-8;
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-amp-dark rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-amp-gold;
+}
+
+/* ===== Selection ===== */
+::selection {
+  @apply bg-amp-gold text-amp-dark;
+}
